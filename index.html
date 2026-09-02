@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aposentadoria Fácil - Guia e Auxílio para o Idoso (INSS)</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --font-scale: 1;
+    }
+
+    body {
+      font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
+      font-size: calc(18px * var(--font-scale));
+      line-height: 1.6;
+      background-color: #f4f6f9;
+      color: #111827;
+    }
+
+    /* Estilos para modo de alto contraste via checkbox CSS */
+    #high-contrast-toggle:checked ~ .app-wrapper {
+      background-color: #000000 !important;
+      color: #ffffff !important;
+    }
+
+    #high-contrast-toggle:checked ~ .app-wrapper .bg-white,
+    #high-contrast-toggle:checked ~ .app-wrapper .bg-blue-50,
+    #high-contrast-toggle:checked ~ .app-wrapper .bg-amber-50,
+    #high-contrast-toggle:checked ~ .app-wrapper .bg-emerald-50 {
+      background-color: #121212 !important;
+      color: #ffffff !important;
+      border-color: #ffffff !important;
+    }
+
+    #high-contrast-toggle:checked ~ .app-wrapper .text-blue-900,
+    #high-contrast-toggle:checked ~ .app-wrapper .text-blue-800,
+    #high-contrast-toggle:checked ~ .app-wrapper .text-gray-700,
+    #high-contrast-toggle:checked ~ .app-wrapper .text-gray-800 {
+      color: #ffffff !important;
+    }
+
+    #high-contrast-toggle:checked ~ .app-wrapper .btn-accent {
+      background-color: #ffff00 !important;
+      color: #000000 !important;
+      font-weight: bold !important;
+    }
+
+    /* Aumento de tamanho dos elementos interativos */
+    button, input, select, summary {
+      min-height: 52px;
+      touch-action: manipulation;
+    }
+
+    /* Foco visível nítido para navegação por teclado/leitor */
+    *:focus-visible {
+      outline: 4px solid #1e40af !important;
+      outline-offset: 3px !important;
+    }
+
+    /* Custom Checkbox Grande */
+    .custom-checkbox {
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      accent-color: #1e3a8a;
+    }
+
+    /* Animação suave para acordeão */
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Checkbox oculto para alternar modo Alto Contraste sem JavaScript -->
+  <input type="checkbox" id="high-contrast-toggle" class="hidden">
+
+  <div class="app-wrapper flex-1 flex flex-col transition-colors duration-200">
+    
+    <!-- Barra Superior de Acessibilidade -->
+    <header class="bg-blue-950 text-white py-3 px-4 shadow-md sticky top-0 z-50">
+      <div class="max-w-5xl mx-auto flex flex-wrap justify-between items-center gap-3">
+        
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-hands-holding-child text-yellow-400 text-3xl" aria-hidden="true"></i>
+          <span class="text-xl md:text-2xl font-bold tracking-wide">INSS Fácil & Acessível</span>
+        </div>
+
+        <!-- Controles de Acessibilidade -->
+        <div class="flex items-center gap-3 flex-wrap">
+          <span class="text-sm md:text-base font-semibold mr-1">
+            <i class="fa-solid fa-universal-access" aria-hidden="true"></i> Acessibilidade:
+          </span>
+          
+          <label for="high-contrast-toggle" class="bg-yellow-400 hover:bg-yellow-300 text-blue-950 font-bold px-4 py-2 rounded-lg cursor-pointer flex items-center gap-2 text-base shadow border-2 border-yellow-500">
+            <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+            <span>Alto Contraste</span>
+          </label>
+        </div>
+
+      </div>
+    </header>
+
+    <main class="flex-1 max-w-5xl w-full mx-auto p-4 md:p-6 space-y-8">
+
+      <!-- Banner Principal com Voz Amigável -->
+      <section class="bg-blue-900 text-white rounded-2xl p-6 md:p-8 shadow-lg border-b-8 border-yellow-400">
+        <div class="max-w-3xl">
+          <span class="bg-yellow-400 text-blue-950 text-sm font-black px-3 py-1 rounded-full uppercase tracking-wider mb-3 inline-block">
+            Portal Simplificado
+          </span>
+          <h1 class="text-3xl md:text-4xl font-black mb-4 leading-tight">
+            Olá! Vamos te ajudar com a sua Aposentadoria.
+          </h1>
+          <p class="text-xl leading-relaxed mb-6 text-blue-100">
+            Aqui você encontra orientações simples, descobre suas regras de idade e tempo de trabalho, e sabe exatamente como pedir seu benefício sem complicações.
+          </p>
+
+          <!-- Botões Rápidos de Ação -->
+          <div class="flex flex-wrap gap-4">
+            <a href="#simulador" class="bg-yellow-400 hover:bg-yellow-300 text-blue-950 text-lg font-bold px-6 py-3 rounded-xl flex items-center gap-3 shadow-md border-2 border-yellow-500 transition-transform active:scale-95">
+              <i class="fa-solid fa-calculator text-2xl" aria-hidden="true"></i>
+              <span>Ver Minhas Regras</span>
+            </a>
+            <a href="#atendimento" class="bg-white hover:bg-gray-100 text-blue-900 text-lg font-bold px-6 py-3 rounded-xl flex items-center gap-3 shadow-md border-2 border-white transition-transform active:scale-95">
+              <i class="fa-solid fa-phone-volume text-2xl text-green-600" aria-hidden="true"></i>
+              <span>Ligar para o INSS (135)</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="simulador" class="bg-white rounded-2xl p-6 md:p-8 shadow-md border-2 border-gray-200">
+        <div class="border-b-2 border-gray-200 pb-4 mb-6 flex items-center gap-3">
+          <i class="fa-solid fa-person-cane text-3xl text-blue-800" aria-hidden="true"></i>
+          <div>
+            <h2 class="text-2xl md:text-3xl font-black text-blue-900">1. Regras Principais do INSS</h2>
+            <p class="text-gray-600 text-base">Veja em qual destas situações você se encaixa hoje:</p>
+          </div>
+        </div>
+
+        <!-- Cards das Regras de Aposentadoria -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <!-- Card 1: Mulheres -->
+          <div class="bg-emerald-50 border-3 border-emerald-500 rounded-xl p-6 flex flex-col justify-between shadow-sm">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <i class="fa-solid fa-venus text-3xl text-emerald-700" aria-hidden="true"></i>
+                <h3 class="text-2xl font-bold text-emerald-900">Para Mulheres</h3>
+              </div>
+              <ul class="space-y-3 text-lg text-emerald-950 font-medium">
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-emerald-600 mt-1" aria-hidden="true"></i>
+                  <span><strong>Idade Mínima:</strong> 62 anos de idade.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-emerald-600 mt-1" aria-hidden="true"></i>
+                  <span><strong>Tempo de Pagamento:</strong> Pelo menos 15 anos pagando o INSS.</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-6 pt-4 border-t border-emerald-200">
+              <span class="text-sm font-bold text-emerald-800 bg-emerald-100 px-3 py-1.5 rounded-lg inline-block">
+                Regra Geral Urbana
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 2: Homens -->
+          <div class="bg-blue-50 border-3 border-blue-500 rounded-xl p-6 flex flex-col justify-between shadow-sm">
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <i class="fa-solid fa-mars text-3xl text-blue-700" aria-hidden="true"></i>
+                <h3 class="text-2xl font-bold text-blue-900">Para Homens</h3>
+              </div>
+              <ul class="space-y-3 text-lg text-blue-950 font-medium">
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-blue-600 mt-1" aria-hidden="true"></i>
+                  <span><strong>Idade Mínima:</strong> 65 anos de idade.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="fa-solid fa-check text-blue-600 mt-1" aria-hidden="true"></i>
+                  <span><strong>Tempo de Pagamento:</strong> Pelo menos 20 anos pagando o INSS.</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-6 pt-4 border-t border-blue-200">
+              <span class="text-sm font-bold text-blue-800 bg-blue-100 px-3 py-1.5 rounded-lg inline-block">
+                Regra Geral Urbana
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Nota explicativa especial para o idoso -->
+        <div class="mt-6 bg-amber-50 border-l-8 border-amber-500 p-4 rounded-r-xl">
+          <div class="flex items-start gap-3">
+            <i class="fa-solid fa-circle-info text-2xl text-amber-700 mt-1" aria-hidden="true"></i>
+            <div>
+              <h4 class="font-bold text-lg text-amber-900">Atenção para Trabalhador Rural ou Professor:</h4>
+              <p class="text-amber-950">
+                Se você trabalhou na roça (campo) ou como professor na escola, a idade exigida diminui em até 5 anos! Fale com o INSS no telefone 135 para saber seu caso específico.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="bg-white rounded-2xl p-6 md:p-8 shadow-md border-2 border-gray-200">
+        <div class="border-b-2 border-gray-200 pb-4 mb-6 flex items-center gap-3">
+          <i class="fa-solid fa-folder-open text-3xl text-blue-800" aria-hidden="true"></i>
+          <div>
+            <h2 class="text-2xl md:text-3xl font-black text-blue-900">2. Documentos Necessários</h2>
+            <p class="text-gray-600 text-base">Marque os documentos que você já tem separados em casa:</p>
+          </div>
+        </div>
+
+        <!-- Lista Interativa de Papéis/Documentos -->
+        <div class="space-y-4">
+
+          <label class="flex items-start gap-4 p-4 rounded-xl border-2 border-gray-200 hover:bg-gray-50 cursor-pointer transition-colors">
+            <input type="checkbox" class="custom-checkbox mt-1">
+            <div class="flex-1">
+              <span class="text-xl font-bold text-gray-900 block">Documento de Identidade (RG ou CNH)</span>
+              <span class="text-gray-600 text-base">Sua carteira de identidade com foto ou carteira de motorista válida.</span>
+            </div>
+          </label>
+
+          <label class="flex items-start gap-4 p-4 rounded-xl border-2 border-gray-200 hover:bg-gray-50 cursor-pointer transition-colors">
+            <input type="checkbox" class="custom-checkbox mt-1">
+            <div class="flex-1">
+              <span class="text-xl font-bold text-gray-900 block">CPF (Cadastro de Pessoa Física)</span>
+              <span class="text-gray-600 text-base">Necessário caso o número não esteja já impresso no seu RG.</span>
+            </div>
+          </label>
+
+          <label class="flex items-start gap-4 p-4 rounded-xl border-2 border-gray-200 hover:bg-gray-50 cursor-pointer transition-colors">
+            <input type="checkbox" class="custom-checkbox mt-1">
+            <div class="flex-1">
+              <span class="text-xl font-bold text-gray-900 block">Comprovante de Residência Atual</span>
+              <span class="text-gray-600 text-base">Conta de luz, água ou telefone recente (dos últimos 3 meses) em seu nome.</span>
+            </div>
+          </label>
+
+          <label class="flex items-start gap-4 p-4 rounded-xl border-2 border-gray-200 hover:bg-gray-50 cursor-pointer transition-colors">
+            <input type="checkbox" class="custom-checkbox mt-1">
+            <div class="flex-1">
+              <span class="text-xl font-bold text-gray-900 block">Todas as Carteiras de Trabalho (CTPS)</span>
+              <span class="text-gray-600 text-base">Todas as suas carteirinhas azuis ou registros de empresas onde trabalhou.</span>
+            </div>
+          </label>
+
+          <label class="flex items-start gap-4 p-4 rounded-xl border-2 border-gray-200 hover:bg-gray-50 cursor-pointer transition-colors">
+            <input type="checkbox" class="custom-checkbox mt-1">
+            <div class="flex-1">
+              <span class="text-xl font-bold text-gray-900 block">Carnês de Pagamento (GPS)</span>
+              <span class="text-gray-600 text-base">Caso tenha pago o INSS por conta própria com carnê ou boleto.</span>
+            </div>
+          </label>
+
+        </div>
+      </section>
+
+      <section class="bg-white rounded-2xl p-6 md:p-8 shadow-md border-2 border-gray-200">
+        <div class="border-b-2 border-gray-200 pb-4 mb-6 flex items-center gap-3">
+          <i class="fa-solid fa-list-check text-3xl text-blue-800" aria-hidden="true"></i>
+          <div>
+            <h2 class="text-2xl md:text-3xl font-black text-blue-900">3. Como dar Entrada na Aposentadoria</h2>
+            <p class="text-gray-600 text-base">Siga esses passos simples no seu ritmo:</p>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+
+          <!-- Passo 1 -->
+          <div class="flex gap-4 items-start">
+            <div class="bg-blue-900 text-white font-black text-2xl w-12 h-12 rounded-full flex items-center justify-center shrink-0 border-2 border-blue-950">
+              1
+            </div>
+            <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 flex-1">
+              <h3 class="text-xl font-bold text-blue-900 mb-1">Ligue para a Central do INSS no número 135</h3>
+              <p class="text-gray-800">
+                A ligação é <strong>gratuita</strong> se feita de um telefone fixo ou orelhão. Se ligar do celular, o custo é de uma ligação local.
+              </p>
+            </div>
+          </div>
+
+          <!-- Passo 2 -->
+          <div class="flex gap-4 items-start">
+            <div class="bg-blue-900 text-white font-black text-2xl w-12 h-12 rounded-full flex items-center justify-center shrink-0 border-2 border-blue-950">
+              2
+            </div>
+            <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 flex-1">
+              <h3 class="text-xl font-bold text-blue-900 mb-1">Peça Ajuda de Alguém da Família no Aplicativo</h3>
+              <p class="text-gray-800">
+                Acesse o aplicativo oficial chamado <strong>"Meu INSS"</strong> no celular ou no computador pelo site <a href="https://meu.inss.gov.br" target="_blank" class="text-blue-700 underline font-bold">meu.inss.gov.br</a>.
+              </p>
+            </div>
+          </div>
+
+          <!-- Passo 3 -->
+          <div class="flex gap-4 items-start">
+            <div class="bg-blue-900 text-white font-black text-2xl w-12 h-12 rounded-full flex items-center justify-center shrink-0 border-2 border-blue-950">
+              3
+            </div>
+            <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 flex-1">
+              <h3 class="text-xl font-bold text-blue-900 mb-1">Acompanhe seu Pedido com o Protocolo</h3>
+              <p class="text-gray-800">
+                Anote em um papel o número do <strong>Protocolo</strong> que o atendente vai te passar. Ele serve para acompanhar o resultado da sua aposentadoria.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="bg-white rounded-2xl p-6 md:p-8 shadow-md border-2 border-gray-200">
+        <div class="border-b-2 border-gray-200 pb-4 mb-6 flex items-center gap-3">
+          <i class="fa-solid fa-circle-question text-3xl text-blue-800" aria-hidden="true"></i>
+          <div>
+            <h2 class="text-2xl md:text-3xl font-black text-blue-900">4. Perguntas Frequentes (Dúvidas)</h2>
+            <p class="text-gray-600 text-base">Clique na pergunta para ver a resposta simples:</p>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+
+          <details class="group bg-gray-50 rounded-xl border-2 border-gray-200">
+            <summary class="font-bold text-xl p-4 cursor-pointer flex justify-between items-center text-blue-900 hover:bg-gray-100 rounded-xl">
+              <span>Preciso pagar alguém ou um advogado para pedir?</span>
+              <i class="fa-solid fa-chevron-down text-xl transition-transform group-open:rotate-180" aria-hidden="true"></i>
+            </summary>
+            <div class="p-4 pt-0 text-gray-800 text-lg border-t border-gray-200 mt-2">
+              <strong>Não!</strong> O serviço do INSS é totalmente gratuito. Você mesmo ou um familiar pode pedir tudo pelo telefone 135 ou aplicativo Meu INSS sem gastar nada.
+            </div>
+          </details>
+
+          <details class="group bg-gray-50 rounded-xl border-2 border-gray-200">
+            <summary class="font-bold text-xl p-4 cursor-pointer flex justify-between items-center text-blue-900 hover:bg-gray-100 rounded-xl">
+              <span>O que é o BPC / LOAS? É diferente da Aposentadoria?</span>
+              <i class="fa-solid fa-chevron-down text-xl transition-transform group-open:rotate-180" aria-hidden="true"></i>
+            </summary>
+            <div class="p-4 pt-0 text-gray-800 text-lg border-t border-gray-200 mt-2">
+              Sim! O <strong>BPC (Benefício de Prestação Continuada)</strong> é para idosos com 65 anos ou mais que <strong>nunca conseguiram pagar o INSS</strong> e possuem baixa renda na família. Ele garante 1 salário mínimo por mês.
+            </div>
+          </details>
+
+          <details class="group bg-gray-50 rounded-xl border-2 border-gray-200">
+            <summary class="font-bold text-xl p-4 cursor-pointer flex justify-between items-center text-blue-900 hover:bg-gray-100 rounded-xl">
+              <span>Esqueci minha senha do GOV.BR, o que faço?</span>
+              <i class="fa-solid fa-chevron-down text-xl transition-transform group-open:rotate-180" aria-hidden="true"></i>
+            </summary>
+            <div class="p-4 pt-0 text-gray-800 text-lg border-t border-gray-200 mt-2">
+              Você pode recuperar sua senha usando o aplicativo do seu banco no celular, ou ir pessoalmente até uma agência do INSS ou do Correios com seus documentos para recadastrar.
+            </div>
+          </details>
+
+        </div>
+      </section>
+
+      <section id="atendimento" class="bg-yellow-400 rounded-2xl p-6 md:p-8 shadow-md border-4 border-yellow-500 text-blue-950">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="space-y-2 text-center md:text-left">
+            <h2 class="text-3xl font-black">Precisa de Ajuda por Telefone?</h2>
+            <p class="text-xl font-medium">A Central 135 do INSS funciona de Segunda a Sábado, das 7h às 22h.</p>
+          </div>
+          
+          <a href="tel:135" class="bg-blue-950 hover:bg-blue-900 text-white font-black text-2xl px-8 py-4 rounded-2xl flex items-center gap-4 shadow-xl border-2 border-blue-900 transition-transform active:scale-95 shrink-0">
+            <i class="fa-solid fa-phone text-3xl text-green-400" aria-hidden="true"></i>
+            <span>LIGAR PARA 135</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-gray-300 py-8 px-4 mt-8 border-t-4 border-blue-900">
+      <div class="max-w-5xl mx-auto text-center space-y-4">
+        <p class="text-lg font-semibold text-white">
+          INSS Fácil - Portal de Auxílio e Informação Acessível ao Idoso
+        </p>
+        <p class="text-sm text-gray-400 max-w-2xl mx-auto">
+          Aviso: Este é um portal informativo e educativo com diretrizes simplificadas para facilitar o acesso da pessoa idosa aos seus direitos previdenciários.
+        </p>
+        <div class="pt-4 border-t border-gray-800 text-xs text-gray-500">
+          Desenvolvido com foco em acessibilidade e usabilidade para a melhor idade.
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
